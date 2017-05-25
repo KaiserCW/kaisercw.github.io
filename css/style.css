@@ -1,0 +1,267 @@
+/*============= GENERAL */
+
+html,
+body,
+.page-wrapper,
+.side-line,
+.main-content { 
+  height: 100%;
+}
+
+body {
+	padding: 0;
+  margin: 0;
+	font-family: 'Muli', sans-serif;
+	background-color: #f1f1f1;
+}
+
+body * { box-sizing: border-box; }
+
+a {
+	color: #787878;
+	text-decoration: none;
+}
+
+ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+input[type="search"] {
+	border: none;
+	padding: 0;
+}
+
+input[type="search"]:focus {
+	outline: none;
+}
+
+.floated-left { float: left; }
+.floated-right { float: right; }
+
+.clearfix::after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+.rounded { border-radius: 1000px; }
+
+.btn {
+	display: inline-block;
+	text-align: center;
+	font-weight: 700;
+	border: 1px solid #c8c8c8;
+}
+
+.btn-group {
+	display: block;
+	font-size: 14px;
+}
+
+.btn-group .btn { margin-right: 8px; }
+.btn-group .btn:last-child { margin-right: 0; }
+
+.btn-active {
+	color: #FFF;
+	background-color: #FF503F;
+	border: none;
+}
+
+
+/*============= SIDE-LINE */
+
+.side-line {
+	min-height: 625px;
+  width: 108px;
+	position: relative;
+	padding: 28px 0;
+	background: #252c32 url("../img/sideline-bg.png");
+	font-size: 16px;
+	font-weight: 700;
+	text-align: center;
+}
+
+.user-avatar {
+	display: inline-block;
+	height: 80px;
+	width: 80px;
+	overflow: hidden;
+	position: relative;
+}
+
+.user-avatar img {
+	width: 240px;
+	position: absolute;
+	left: -95px;
+	top: -11px;
+}
+
+.side-menu .menu-item { display: block; }
+
+.side-menu .menu-item a {
+	display: block;
+	padding: 18px 0;
+	border-left: 3px solid transparent;
+}
+
+.side-menu .menu-item::before {
+	content: "...";
+	display: inline-block;
+	font-size: 30px;
+	margin-top: -16px;	
+	color: #787878;
+	vertical-align: middle;
+}
+
+.bottom-group .menu-item:first-child::before { display: none; }
+
+.top-group .menu-item a:focus,
+.top-group .menu-item .current {
+	border-left: 3px solid #ff503f;
+}
+
+.side-menu i {
+	display: block;
+	margin-bottom: 8px;
+	font-size: 30px;
+	opacity: .5;
+}
+
+.side-menu .current a,
+.side-menu .menu-item a:hover,
+.side-menu .menu-item a:focus { color: #fff; }
+
+.side-menu .current i,
+.side-menu .menu-item a:hover i,
+.side-menu .menu-item a:focus i {
+	color: #ff503f;
+	opacity: 1;
+}
+
+.side-menu .menu-item a:hover span,
+.side-menu .current { color: #fff; }
+
+.side-menu.bottom-group {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
+
+
+/*============= MAIN-CONTENT */
+
+.main-content { margin-left: 108px; }
+
+.content-box {
+	border: 1px solid #c8c8c8;
+	border-radius: 4px;
+	position: relative;
+}
+
+.content-tl .btn-group i { font-size: 16px; }
+
+.content-tl {
+	position: relative;
+	height: 90px;
+	padding: 0 20px;
+}
+
+.content-tl .btn {
+	line-height: 36px;
+	height: 36px;
+	margin-top: 27px;
+	padding: 0 20px;
+}
+
+.content-tl .btn-active,
+.content-tl .btn-expand {
+	padding: 0;
+	width: 36px;
+}
+
+.content-tl .btn-expand {
+	color: #fff;
+	background-color: #aacc4e;
+}
+
+
+.tab-wrapper {
+	border-top: 1px solid #d3d7da;
+	overflow: hidden;
+}
+
+.tab-wrapper > input { display: none; }
+
+.tab-wrapper > label {
+	display: block;
+	float: left;
+	cursor: pointer;
+	border-right: 1px solid #d3d7da;
+	background-color: #f8f8f8;
+	text-align: center;
+	padding: 20px 40px;
+	font-size: 22px;
+}
+
+.tab-wrapper > label:hover,
+.tab-wrapper > input:checked + label {
+	background-color: #fff;
+}
+
+.tab-wrapper > input:checked + label {
+	padding-bottom: 21px;
+	margin-bottom: -1px;
+}
+
+.tab-body { display: none; }
+
+#tab-nav-1:checked ~ .tabs .active-projects,
+#tab-nav-2:checked ~ .tabs .messenger {
+	display: block;
+}
+
+.tab-wrapper .tabs {
+	padding: 20px;
+	border-top: 1px solid #d3d7da;
+	background-color: #fff;
+	clear: both;
+}
+
+
+.active-projects .users-activity { width: 300px; }
+
+.active-projects .projets { margin-right: 320px; }
+
+.projets .btn {
+	height: 32px;
+	line-height: 32px;
+}
+
+.projets .btn-round { width: 32px; }
+
+.projets .btn-group { vertical-align: middle; }
+
+.projects-item {
+	display: block;
+	position: relative;
+	padding: 20px;
+	border-bottom: 1px solid #d3d7da;
+}
+
+.project-title {
+	display: inline-block;
+	margin: 0;
+	vertical-align: middle;
+}
+
+.projets-tl input {
+	width: 40%;
+	max-width: 254px;
+}
+
+.list {
+	height: 100%;
+	overflow: auto;
+}

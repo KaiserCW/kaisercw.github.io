@@ -1,0 +1,309 @@
+/*============= GENERAL */
+
+html,
+body,
+.app,
+.app-side,
+.app-main { 
+  height: 100%;
+}
+
+body {
+	padding: 0;
+  margin: 0;
+	font-family: 'Muli', sans-serif;
+	background-color: #f1f1f1;
+}
+
+body * { box-sizing: border-box; }
+
+a {
+	color: #787878;
+	text-decoration: none;
+}
+
+ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+input[type="search"] {
+	border: none;
+	padding: 0;
+}
+
+input[type="radio"] {
+	display: none;
+}
+
+input[type="search"]:focus {
+	outline: none;
+}
+
+button:focus {
+	outline: none;
+}
+
+.floated-left { float: left; }
+.floated-right { float: right; }
+
+.clearfix::after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+.rounded { border-radius: 1000px; }
+
+.btn {
+	display: inline-block;
+	text-align: center;
+	font-weight: 700;
+	border: 1px solid #c8c8c8;
+}
+
+.btn-group {
+	display: block;
+	font-size: 14px;
+}
+
+.btn-group .btn { margin-right: 8px; }
+.btn-group .btn:last-child { margin-right: 0; }
+
+.btn-active {
+	color: #FFF;
+	background-color: #FF503F;
+	border: none;
+}
+
+.style-box {
+	display: block;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	box-sizing: border-box;
+	height: 100%;
+	position: relative;
+}
+
+/*============= app-side */
+
+.app-side {
+	min-height: 625px;
+  width: 108px;
+	position: relative;
+	padding: 28px 0;
+	background: #252c32 url("../img/sideline-bg.png");
+	font-size: 16px;
+	font-weight: 700;
+	text-align: center;
+}
+
+.user-avatar {
+	display: inline-block;
+	height: 80px;
+	width: 80px;
+	overflow: hidden;
+	position: relative;
+}
+
+.user-avatar img {
+	width: 240px;
+	position: absolute;
+	left: -95px;
+	top: -11px;
+}
+
+.side-menu .menu-item { display: block; }
+
+.side-menu .menu-item a {
+	display: block;
+	padding: 18px 0;
+	border-left: 3px solid transparent;
+}
+
+.side-menu .menu-item::before {
+	content: "...";
+	display: inline-block;
+	font-size: 30px;
+	margin-top: -16px;	
+	color: #787878;
+	vertical-align: middle;
+}
+
+.bottom-group .menu-item:first-child::before { display: none; }
+
+.top-group .menu-item a:focus,
+.top-group .menu-item .current {
+	border-left: 3px solid #ff503f;
+}
+
+.side-menu i {
+	display: block;
+	margin-bottom: 8px;
+	font-size: 30px;
+	opacity: .5;
+}
+
+.side-menu .current a,
+.side-menu .menu-item a:hover,
+.side-menu .menu-item a:focus { color: #fff; }
+
+.side-menu .current i,
+.side-menu .menu-item a:hover i,
+.side-menu .menu-item a:focus i {
+	color: #ff503f;
+	opacity: 1;
+}
+
+.side-menu .menu-item a:hover span,
+.side-menu .current { color: #fff; }
+
+.side-menu.bottom-group {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
+
+
+/*============= app-main =============*/
+
+.app-main { margin-left: 108px; }
+
+
+/*------------ app-header */
+.app-header .btn-group i { font-size: 16px; }
+
+.app-header {
+	position: relative;
+	height: 90px;
+	padding: 0 20px;
+}
+
+.app-header .btn {
+	line-height: 36px;
+	height: 36px;
+	margin-top: 27px;
+	padding: 0 20px;
+}
+
+.app-header .btn-active,
+.app-header .btn-expand {
+	padding: 0;
+	width: 36px;
+}
+
+.app-header .btn-expand {
+	color: #fff;
+	background-color: #aacc4e;
+}
+
+
+/*------------ page */
+.page {
+  height: 100%;
+  box-sizing: border-box;
+  padding-top: 90px;
+  margin-top: -90px;
+}
+
+.page-header {
+	position: relative;
+	height: 70px;
+	border-top: 1px solid #ddd;
+}
+
+.page-body {
+	height: 100%;
+  box-sizing: border-box;
+  padding-top: 70px;
+  margin-top: -70px;
+}
+
+.tabs {
+	height: 100%;
+	display: inline-block;
+}
+
+.tab {
+	display: inline-block;
+  min-height: 100%;
+	padding: 0 18px;
+	border-right: 1px solid #ddd;
+}
+
+.tab > * {
+	line-height: 70px;
+	vertical-align: middle;
+}
+
+.tab-active {
+	background-color: #fff;
+	margin-bottom: -1px;
+}
+
+.tab-content {
+	height: 100%;
+	padding: 20px;
+	box-sizing: border-box;
+	background-color: #fff;
+	border-top: 1px solid #ddd;
+	display: none;
+}
+
+.tab-content .main-content {
+	margin-right: 300px;
+	min-width: 300px;
+}
+
+.tab-content .side-content {
+	width: 280px;
+	float: right;
+}
+
+.page #tab-1:checked ~ .page-header .tabs .tab-projects,
+.page #tab-2:checked ~ .page-header .tabs .tab-messenger {
+	background-color: #fff;
+	margin-bottom: -1px;
+}
+
+.page #tab-1:checked ~ .page-body .projects,
+.page #tab-2:checked ~ .page-body .messenger {
+	display: block;
+}
+
+.chat-input {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	box-sizing: border-box;
+	background-color: #eee;
+	padding: 20px 70px 20px 20px;
+}
+
+.chat-input > * {
+	vertical-align: middle;
+}
+
+.chat-input textarea {
+	width: 100%;
+}
+
+.chat-input button {
+	background: none;
+	border: none;
+	height: 30px;
+	position: absolute;
+	top: 50%;
+	right: 20px;
+	margin-top: -16px;
+	line-height: 32px;
+	font-size: 32px;
+	padding: 0;
+	color: #aaa;
+	cursor: pointer;
+}
+
+.chat-input button:hover {
+	color: #FF503F;
+}
